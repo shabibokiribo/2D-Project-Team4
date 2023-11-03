@@ -5,7 +5,6 @@ using UnityEngine;
 public class HeartProjectile : MonoBehaviour {
     private float rotation;
 
-    
     private void Start() {
         rotation = 0f;
         InvokeRepeating("Rotator",0f,1f/120f);

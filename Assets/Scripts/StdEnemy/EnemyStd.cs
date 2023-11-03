@@ -1,19 +1,3 @@
-//////////////////////
-// HOW TO USE:
-// 1. Add the script to an enemy gameObject.
-// 2. Give the enemy gameObject a rigidbody and sphere collider. 
-// 3. Make sure "Use Gravity" is ticked off.
-// 4. Put a platform under the enemy gameObject.
-// 5. Put two boxes as children to the platform object. 
-// 6. Untick the MeshCollider component to these two objects.
-// 7. Tick on the "Is Trigger" option under the box collider component for these two objects.
-// 8. Give both objects the tag "Edge".
-// 9. If you want to change the spawning position of the projectiles, go to this script and edit lines 45 and 50.
-// 9. (Addendum) If you want to change the angle the projectile spawns at, edit lines 49 and 54 to the correct angles (Quaternion.Euler(x,y,z)).
-// 10. Make sure to set the spawningObj and projectile GameObjects.
-// 11. When in doubt, use my template scene called Enemy1Template.
-//////////////////////
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

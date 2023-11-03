@@ -1,14 +1,10 @@
-// TODO:
-// Add a curve to the speed;
-// The speed will decrease as the target gets closer.
-// The cloud should also overshoot a bit, which it seems to already do.
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Cloud : MonoBehaviour {
     public GameObject playerObj;
+    public GameObject projectile;
     private Vector2 target;
     private Vector2 position;
     private float _distance;
@@ -18,6 +14,7 @@ public class Cloud : MonoBehaviour {
         position = Vector2.zero;
         target = new Vector2(playerObj.transform.position.x, gameObject.transform.position.y);
         _distance = Vector2.Distance(transform.position,target);
+        InvokeRepeating("SpawnHeartProjectile",1f,3f);
     }
 
     private void LateUpdate() {
@@ -27,4 +24,7 @@ public class Cloud : MonoBehaviour {
         transform.position = Vector2.MoveTowards(transform.position, target, distanceSpeed * Time.deltaTime);
     }
 
+    private void SpawnHeartProjectile() {
+        Instantiate(projectile,gameObject.transform.position,Quaternion.Euler(0,0,0));
+    }
 }

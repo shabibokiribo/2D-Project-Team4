@@ -6,12 +6,10 @@ public class Cloud : MonoBehaviour {
     public GameObject playerObj;
     public GameObject projectile;
     private Vector2 target;
-    private Vector2 position;
     private float _distance;
     public float speed;
 
     private void Start() {
-        position = Vector2.zero;
         target = new Vector2(playerObj.transform.position.x, gameObject.transform.position.y);
         _distance = Vector2.Distance(transform.position,target);
         InvokeRepeating("SpawnHeartProjectile",1f,3f);

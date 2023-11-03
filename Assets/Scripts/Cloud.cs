@@ -18,16 +18,13 @@ public class Cloud : MonoBehaviour {
         position = Vector2.zero;
         target = new Vector2(playerObj.transform.position.x, gameObject.transform.position.y);
         _distance = Vector2.Distance(transform.position,target);
-        InvokeRepeating("DelayTarget",0f,0.5f);
     }
 
     private void LateUpdate() {
         _distance = Vector2.Distance(transform.position,target);
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    }
-
-    private void DelayTarget() {
+        float distanceSpeed = (_distance * speed) * 1.2f;
         target = new Vector2(playerObj.transform.position.x, gameObject.transform.position.y);
+        transform.position = Vector2.MoveTowards(transform.position, target, distanceSpeed * Time.deltaTime);
     }
 
 }

@@ -18,6 +18,5 @@ public class X : MonoBehaviour {
         } else {
            rb2d.velocity = new Vector2(h*0.9f,rb2d.velocity.y);
         }
-        
     }
 }

@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour {
     private void LateUpdate() {
         distance = Vector3.Distance(gameObject.transform.position,target);
         float distanceSpeed = (distance * speed) * 1.2f;
-        Debug.Log(distanceSpeed);
+        //Debug.Log(distanceSpeed);
         float newDistanceY = (distanceFromPlayerY + player.transform.position.y);
         target = new Vector3(player.transform.position.x, newDistanceY, distanceFromPlayerZ);
         transform.position = Vector3.MoveTowards(transform.position, target, distanceSpeed * Time.deltaTime);

@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r_thrust: 300
   _Left: 0
+  angleZ: 90

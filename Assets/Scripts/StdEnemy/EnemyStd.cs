@@ -17,10 +17,10 @@ public class EnemyStd : MonoBehaviour {
     private void Update() {
         switch(isLeft) {
             case(true):
-                gameObject.transform.Translate(Vector2.left * Time.deltaTime * speed, Space.World);
+                rb2d.velocity = new Vector2(-2f,rb2d.velocity.y);
                 break;
             case(false):
-                gameObject.transform.Translate(Vector2.right * Time.deltaTime * speed, Space.World);
+                rb2d.velocity = new Vector2(2f,rb2d.velocity.y);
                 break;
         }
     }
@@ -34,7 +34,7 @@ public class EnemyStd : MonoBehaviour {
                 break;
             case(false):
                 spawningObj.transform.localPosition = new Vector2(0.4f,0.4f);
-                GameObject myProjectileR = GameObject.Instantiate(projectile,spawningObj.transform.position,Quaternion.Euler(0,0,270)) as GameObject;
+                GameObject myProjectileR = GameObject.Instantiate(projectile,spawningObj.transform.position,Quaternion.Euler(0,0,90)) as GameObject;
                 myProjectileR.GetComponent<ArrowProjectile>()._Left = false;
                 break;
         }
@@ -50,7 +50,6 @@ public class EnemyStd : MonoBehaviour {
                     isLeft = true;
                     break;
             }
-            Debug.Log(isLeft);
         }
     }
 }

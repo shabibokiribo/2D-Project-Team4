@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1437967350}
+  isScrolling: 0
   distanceFromPlayerZ: -10
   distanceFromPlayerY: 2
   speed: 2
@@ -299,8 +300,14 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3460393881757208057, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2130582130}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5279311263096947015, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1437967365}
     - targetCorrespondingSourceObject: {fileID: 5279311263096947015, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1437967358}
@@ -963,6 +970,25 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!4 &1437967364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+  m_PrefabInstance: {fileID: 862482953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1437967365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437967350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96fa1f7f4b774024ea6af24ea4b7d264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammerAsset: {fileID: 4120865449022159125, guid: 7930f2ae60a02c842b314b4f989e341a, type: 3}
+  spawnPointObj: {fileID: 2130582129}
 --- !u!1 &2042703852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1249,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2130582129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130582130}
+  m_Layer: 0
+  m_Name: HammerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130582130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130582129}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1437967364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

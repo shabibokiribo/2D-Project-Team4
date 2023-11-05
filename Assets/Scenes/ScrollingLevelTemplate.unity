@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1437967350}
+  isScrolling: 1
   distanceFromPlayerZ: -10
   distanceFromPlayerY: 2
   speed: 2

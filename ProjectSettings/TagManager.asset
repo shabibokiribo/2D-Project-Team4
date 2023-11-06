@@ -9,6 +9,7 @@ TagManager:
   - Rose
   - Enemy
   - Hammer
+  - CupidDialogueTrig
   layers:
   - Default
   - TransparentFX

@@ -140,6 +140,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6200000, guid: ffdc3dc3ea4bf8849ae95c18fb3ca558, type: 2}
     - target: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
       objectReference: {fileID: 0}
@@ -179,10 +191,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4016225339685143879, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5032925073777258943, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 295aa460f400890408f9873cf030c3ed, type: 3}
     - target: {fileID: 5279311263096947015, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -239,8 +259,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.8, y: 10.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -248,9 +268,37 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 0.24597311, y: 1.4766657}
+      - {x: 0.97726655, y: 1.5582972}
+      - {x: 1.4118482, y: 1.8240283}
+      - {x: 1.6322868, y: 2.3473465}
+      - {x: 1.4534786, y: 2.636487}
+      - {x: 1.3727477, y: 2.9381137}
+      - {x: 1.7236209, y: 2.9785278}
+      - {x: 1.6350077, y: 3.8640194}
+      - {x: 1.0345054, y: 4.272934}
+      - {x: 0.14370298, y: 4.199216}
+      - {x: 0.24865723, y: 4.510103}
+      - {x: 0.17921758, y: 4.7911696}
+      - {x: -0.120823145, y: 4.616307}
+      - {x: -0.4357803, y: 4.798406}
+      - {x: -0.55192685, y: 4.4729557}
+      - {x: -0.24870944, y: 3.97257}
+      - {x: -1.1485906, y: 3.832571}
+      - {x: -1.6524701, y: 3.0755336}
+      - {x: -1.6496058, y: 2.231076}
+      - {x: -2.0100546, y: 2.356568}
+      - {x: -1.8473673, y: 1.8085508}
+      - {x: -1.4592137, y: 1.6902282}
+      - {x: -0.8358469, y: 1.72766}
+      - {x: -0.41802883, y: 1.484081}
+      - {x: -1.1273453, y: 0.7198069}
+      - {x: -1.1193931, y: -0.1926117}
+      - {x: -0.69705606, y: -0.81613755}
+      - {x: -0.6148405, y: -1.3952525}
+      - {x: -0.7547555, y: -1.5143292}
+      - {x: -0.7967386, y: -2.1949782}
+      - {x: 1.4332983, y: -2.135406}
   m_UseDelaunayMesh: 0
 --- !u!114 &69631823
 MonoBehaviour:

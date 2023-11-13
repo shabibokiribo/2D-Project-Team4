@@ -39,6 +39,11 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 break;
+            case("DeathZone"):
+                Debug.Log("YEOWCH!");
+                StartCoroutine(temporaryAnimation());
+                gameObject.transform.position = new Vector3(-6.5f,-3.2f,0f);
+                break;
         }
     }
 

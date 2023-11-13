@@ -12,6 +12,7 @@ TagManager:
   - CupidTrig
   - Arrow
   - EnemyPlatform
+  - DeathZone
   layers:
   - Default
   - TransparentFX

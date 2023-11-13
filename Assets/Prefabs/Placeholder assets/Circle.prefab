@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5615338198403285675}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!114 &5615338198403285675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  isLeft: 0
+  isLeft: 1
   spawningObj: {fileID: 2882387738129107196}
-  projectile: {fileID: 6896982738270202889, guid: 98f22e8ab2df1c745abd4a47e6ea6477, type: 3}
+  projectile: {fileID: 7988475985069725219, guid: dea930456432cc04a843c4fcfa8ce1ee, type: 3}
 --- !u!1 &2882387738129107196
 GameObject:
   m_ObjectHideFlags: 0

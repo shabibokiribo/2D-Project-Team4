@@ -29,13 +29,17 @@ public class EnemyStd : MonoBehaviour {
         switch(isLeft) {
             case(true):
                 spawningObj.transform.localPosition = new Vector2(0f,-0f);
-                GameObject myProjectileL = GameObject.Instantiate(projectile,spawningObj.transform.position,Quaternion.Euler(0,0,30)) as GameObject;
-                myProjectileL.GetComponent<ArrowProjectile>()._Left = true;
+                if(projectile != null) {
+                    GameObject myProjectileL = GameObject.Instantiate(projectile,spawningObj.transform.position,Quaternion.Euler(0,0,30)) as GameObject;
+                    myProjectileL.GetComponent<ArrowProjectile>()._Left = true;
+                }
                 break;
             case(false):
                 spawningObj.transform.localPosition = new Vector2(0f,0f);
-                GameObject myProjectileR = GameObject.Instantiate(projectile,spawningObj.transform.position,Quaternion.Euler(0,0,-30)) as GameObject;
-                myProjectileR.GetComponent<ArrowProjectile>()._Left = false;
+                if(projectile != null) {
+                    GameObject myProjectileL = GameObject.Instantiate(projectile,spawningObj.transform.position,Quaternion.Euler(0,0,30)) as GameObject;
+                    myProjectileL.GetComponent<ArrowProjectile>()._Left = true;
+                }
                 break;
         }
     }

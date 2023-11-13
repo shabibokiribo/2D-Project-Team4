@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Hammer
   - CupidTrig
+  - Arrow
+  - EnemyPlatform
   layers:
   - Default
   - TransparentFX

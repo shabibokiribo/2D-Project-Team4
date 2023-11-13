@@ -3,6 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Handler : MonoBehaviour {
+    public Sprite[] sprites; // 0 idle, 1 run, 2 jump
+    
+    // Sprite updator
+    private void FixedUpdate() {
+        float x = gameObject.GetComponent<Rigidbody2D>().velocity.x;
+        float y = gameObject.GetComponent<Rigidbody2D>().velocity.y;
+
+        if(x != 0) {
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[1];
+        } if(x == 0 && y == 0) {
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[0];
+        } if(y != 0) {
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[2];
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D col) {
         switch(col.gameObject.tag) {
             case("Rose"):

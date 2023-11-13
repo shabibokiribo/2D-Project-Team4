@@ -461,7 +461,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516669597}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -618,6 +618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 5615338198403285675, guid: eb031a4e8bff8b84886aa118a3048109, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7988475985069725219, guid: dea930456432cc04a843c4fcfa8ce1ee, type: 3}
     - target: {fileID: 9034798747803204808, guid: eb031a4e8bff8b84886aa118a3048109, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.987917
@@ -779,9 +783,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 69631815}
-  isScrolling: 1
+  isScrolling: 0
   distanceFromPlayerZ: -10
-  distanceFromPlayerY: 2
+  distanceFromPlayerY: 1
   speed: 2
 --- !u!81 &683891779
 AudioListener:
@@ -1573,7 +1577,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421461937}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1627,8 +1631,8 @@ Transform:
   m_GameObject: {fileID: 1421461937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.3984, y: -1.97, z: 0}
-  m_LocalScale: {x: 7.1201873, y: 0.43956876, z: 1}
+  m_LocalPosition: {x: 8.4591, y: -1.7791, z: 0}
+  m_LocalScale: {x: 6.998432, y: 0.057803296, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 689985201}
@@ -2041,7 +2045,7 @@ GameObject:
   - component: {fileID: 1950196514}
   m_Layer: 0
   m_Name: Platform (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

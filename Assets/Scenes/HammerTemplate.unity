@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 968450295}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Platform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -884,6 +884,10 @@ PrefabInstance:
       propertyPath: angle.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5615338198403285675, guid: eb031a4e8bff8b84886aa118a3048109, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7988475985069725219, guid: dea930456432cc04a843c4fcfa8ce1ee, type: 3}
     - target: {fileID: 5984608504525817910, guid: eb031a4e8bff8b84886aa118a3048109, type: 3}
       propertyPath: m_Constraints
       value: 2

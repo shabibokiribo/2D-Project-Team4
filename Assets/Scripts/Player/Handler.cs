@@ -14,13 +14,13 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
                 gameObject.GetComponent<Y>().enabled = false;
+                StartCoroutine(temporaryAnimation());
                 break;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D col) {
-        switch(col.gameObject.tag) {
-            case("Enemy"):
+            case("Arrow"):
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+                gameObject.GetComponent<X>().enabled = false;
+                gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 break;
         }

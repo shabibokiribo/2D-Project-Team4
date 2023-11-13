@@ -50,6 +50,8 @@ public class EnemyStd : MonoBehaviour {
                     isLeft = true;
                     break;
             }
+        } if (col.gameObject.tag == "Hammer") {
+            Destroy(gameObject);
         }
     }
 }

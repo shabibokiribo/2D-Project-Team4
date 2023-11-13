@@ -24,8 +24,6 @@ public class ArrowProjectile : MonoBehaviour {
                 rb2d.AddForce(Vector2.right * r_thrust);
                 break;
         }
-        
-        
     }
 
     private void FixedUpdate() { // Finds the angle that the projectile is traveling.
@@ -33,5 +31,11 @@ public class ArrowProjectile : MonoBehaviour {
         float speed = _vel.magnitude;
         float angle = Mathf.Atan2(_vel.y,_vel.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if(col.gameObject.tag == "Player" || col.gameObject.tag == "Platform" || col.gameObject.tag == "Hammer") {
+            Destroy(gameObject);
+        }
     }
 }

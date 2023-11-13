@@ -8,7 +8,7 @@ public class DialogueText : MonoBehaviour
     // Start is called before the first frame update
     public TMP_Text txtDialogueRose;
     public TMP_Text txtDialogueCupidTrig;
-    float dialogueType = .08f;
+    float dialogueType = .09f;
     void Start()
     {
         
@@ -21,8 +21,9 @@ public class DialogueText : MonoBehaviour
             StartCoroutine(Dialogue("Collect roses to confess to your crush",txtDialogueRose));
         }
 
-        if (other.gameObject.tag == "CupidDialogueTrig")
+        if (other.gameObject.tag == "CupidTrig")
         {
+            StopAllCoroutines();
             StartCoroutine(Dialogue("Avoid cupid's arrows to stay faithful to your crush", txtDialogueCupidTrig));
         }
 

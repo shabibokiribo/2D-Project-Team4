@@ -18,5 +18,11 @@ public class X : MonoBehaviour {
         } else {
            rb2d.velocity = new Vector2(h*0.9f,rb2d.velocity.y);
         }
+
+        if(rb2d.velocity.x < 0) {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        } else {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 }

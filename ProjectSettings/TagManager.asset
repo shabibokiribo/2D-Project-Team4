@@ -9,7 +9,10 @@ TagManager:
   - Rose
   - Enemy
   - Hammer
-  - CupidDialogueTrig
+  - CupidTrig
+  - Arrow
+  - EnemyPlatform
+  - DeathZone
   layers:
   - Default
   - TransparentFX

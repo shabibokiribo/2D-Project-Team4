@@ -21,14 +21,18 @@ public class Y : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if(col.gameObject.tag == "Platform") {
+        if(col.gameObject.tag == "Platform" || col.gameObject.tag == "EnemyPlatform") {
             canJumpY = true;
+        } if(rb2d.velocity.y > 0 && col.gameObject.tag == "EnemyPlatform") {
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D col) {
-        if(col.gameObject.tag == "Platform") {
+        if(col.gameObject.tag == "Platform" || col.gameObject.tag == "EnemyPlatform") {
             canJumpY = false;
+        } if(col.gameObject.tag == "EnemyPlatform") {
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         }
     }
 }

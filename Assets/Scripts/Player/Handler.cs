@@ -1,9 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Handler : MonoBehaviour {
     public Sprite[] sprites; // 0 idle, 1 run, 2 jump
+    private int lives;
+    
+    private void Start() {
+        lives = 3;
+    }
+    
+    private void Update() {
+        switch(lives) {
+            case(0):
+                Debug.Log("YOU LOSE!!!!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                break;
+        }
+    }
     
     // Sprite updator
     private void FixedUpdate() {
@@ -22,10 +37,11 @@ public class Handler : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col) {
         switch(col.gameObject.tag) {
             case("Rose"):
-                //value++
+                lives--;
                 Destroy(col.gameObject);
                 break;
             case("Enemy"):
+                lives--;
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
@@ -33,6 +49,14 @@ public class Handler : MonoBehaviour {
                 StartCoroutine(temporaryAnimation());
                 break;
             case("Arrow"):
+                lives--;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+                gameObject.GetComponent<X>().enabled = false;
+                gameObject.GetComponent<Y>().enabled = false;
+                StartCoroutine(temporaryAnimation());
+                break;
+            case("Heart"):
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;

@@ -18,9 +18,11 @@ public class EnemyStd : MonoBehaviour {
         switch(isLeft) {
             case(true):
                 rb2d.velocity = new Vector2(-2f,rb2d.velocity.y);
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 break;
             case(false):
                 rb2d.velocity = new Vector2(2f,rb2d.velocity.y);
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
                 break;
         }
     }

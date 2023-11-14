@@ -13,6 +13,7 @@ TagManager:
   - Arrow
   - EnemyPlatform
   - DeathZone
+  - Heart
   layers:
   - Default
   - TransparentFX

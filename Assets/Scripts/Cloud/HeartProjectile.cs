@@ -31,7 +31,10 @@ public class HeartProjectile : MonoBehaviour {
             case("Player"):
                 Destroy(gameObject);
                 break;
-            // and so on...
+            case("Hammer"):
+                GameObject.Find("Cloud(Clone)").GetComponent<Cloud>().intTilCloudDeath--;
+                Destroy(gameObject);
+                break;
         }
     }
 }

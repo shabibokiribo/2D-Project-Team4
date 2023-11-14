@@ -5,14 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class Handler : MonoBehaviour {
     public Sprite[] sprites; // 0 idle, 1 run, 2 jump
-    private int lives;
+    //private int lives;
+
+    public int maxHealth = 5; //should do the same thing as lives
+    public int currentHealth;
+
+    public HealthBar healthBar;
+
     
+
     private void Start() {
-        lives = 3;
+        //lives = 3;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
     
     private void Update() {
-        switch(lives) {
+        switch(maxHealth) {
             case(0):
                 Debug.Log("YOU LOSE!!!!");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -34,14 +43,20 @@ public class Handler : MonoBehaviour {
         }
     }
 
+
+
     private void OnTriggerEnter2D(Collider2D col) {
         switch(col.gameObject.tag) {
             case("Rose"):
-                lives--;
+                //GainHealth(1);
+
+
                 Destroy(col.gameObject);
                 break;
             case("Enemy"):
-                lives--;
+                TakePlayerDamage(1); //decrease Healthbar by 1
+
+
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
@@ -49,7 +64,8 @@ public class Handler : MonoBehaviour {
                 StartCoroutine(temporaryAnimation());
                 break;
             case("Arrow"):
-                lives--;
+                TakePlayerDamage(1); //decrease Healthbar by 1
+
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
@@ -57,6 +73,7 @@ public class Handler : MonoBehaviour {
                 StartCoroutine(temporaryAnimation());
                 break;
             case("Heart"):
+                TakePlayerDamage(1); //decrease Healthbar by 1
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
@@ -70,6 +87,26 @@ public class Handler : MonoBehaviour {
                 break;
         }
     }
+
+
+    void TakePlayerDamage(int damage) // decrease player's health by a number
+    {
+        if (currentHealth <= 5 && currentHealth >= 0) //Player's health must be between 0 and 5 to take damage
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+
+    void GainHealth (int hp) // decrease player's health by a number
+    {
+        if (currentHealth <= 5 && currentHealth >= 0) //Player's health must be between 0 and 5 to gain health
+        {
+            currentHealth = hp;
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+
 
     // Temporary animation until someone gets around to making a real one.
     private IEnumerator temporaryAnimation() {

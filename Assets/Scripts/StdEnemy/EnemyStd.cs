@@ -8,9 +8,12 @@ public class EnemyStd : MonoBehaviour {
     public bool isLeft; // Changes whether the object is moving left or right
     public GameObject spawningObj; // Where the projectile spawns
     public GameObject projectile; // Projectile prefab
+    public AudioClip hit;
+    AudioSource audioSource;
 
     private void Start() {
         rb2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         InvokeRepeating("SpawnProjectile",1.0f,1.0f);
     }
 
@@ -57,7 +60,10 @@ public class EnemyStd : MonoBehaviour {
                     break;
             }
         } if (col.gameObject.tag == "Hammer") {
-            Destroy(gameObject);
+            audioSource.PlayOneShot(hit,1f);
+            rb2d.velocity = Vector2.zero;
+            gameObject.GetComponent<EnemyStd>().enabled = false;
+            gameObject.GetComponent<OnHitDestroy>().enabled = true;
         }
     }
 }

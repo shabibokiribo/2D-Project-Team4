@@ -11,8 +11,11 @@ public class Cloud : MonoBehaviour {
     public int intTilCloudDeath;
     private Color original = new Color(195f,179f,155f);
     private Color dying = new Color(147f,52f,74f);
+    public AudioClip drop;
+    AudioSource audioSource;
 
     private void Start() {
+        audioSource = GetComponent<AudioSource>();
         intTilCloudDeath = 3;
         playerObj = GameObject.Find("Player"); // PLEASE dont forget this
         target = new Vector2(playerObj.transform.position.x, gameObject.transform.position.y);
@@ -39,6 +42,7 @@ public class Cloud : MonoBehaviour {
 
     private void SpawnHeartProjectile() {
         Instantiate(projectile,gameObject.transform.position,Quaternion.identity);
+        audioSource.PlayOneShot(drop,1f);
     }
 
     private IEnumerator MakeSpeedNormalAfter(float time) {

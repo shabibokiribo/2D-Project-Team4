@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Handler : MonoBehaviour {
     public Sprite[] sprites; // 0 idle, 1 run, 2 jump
+    public AudioClip[] audios; // 0 rose, 1 take damage, 2 fall into pit
+    AudioSource audioSource;
     private int lives;
     
     private void Start() {
         lives = 3;
+        audioSource = GetComponent<AudioSource>();
     }
     
     private void Update() {
@@ -39,6 +42,7 @@ public class Handler : MonoBehaviour {
             case("Rose"):
                 lives--;
                 Destroy(col.gameObject);
+                audioSource.PlayOneShot(audios[0],1f);
                 break;
             case("Enemy"):
                 lives--;
@@ -47,6 +51,7 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<X>().enabled = false;
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
+                audioSource.PlayOneShot(audios[1],1f);
                 break;
             case("Arrow"):
                 lives--;
@@ -55,6 +60,7 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<X>().enabled = false;
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
+                audioSource.PlayOneShot(audios[1],1f);
                 break;
             case("Heart"):
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
@@ -62,11 +68,13 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<X>().enabled = false;
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
+                audioSource.PlayOneShot(audios[1],1f);
                 break;
             case("DeathZone"):
                 Debug.Log("YEOWCH!");
                 StartCoroutine(temporaryAnimation());
                 gameObject.transform.position = new Vector3(-6.5f,-3.2f,0f);
+                audioSource.PlayOneShot(audios[2],1f);
                 break;
         }
     }

@@ -31,7 +31,7 @@ public class DialogueText : MonoBehaviour
         if (other.gameObject.tag == "CloudTrig")
         {
             StopAllCoroutines();
-            StartCoroutine(Dialogue("Avoid falling hearts", txtDialogueCloudTrig));
+            StartCoroutine(Dialogue("Avoid falling hearts and hit them with your shield to kill the cloud ", txtDialogueCloudTrig));
         }
 
     }

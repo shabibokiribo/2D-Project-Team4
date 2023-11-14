@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 840634926}
         m_TargetAssemblyTypeName: BUTTONS, Assembly-CSharp
-        m_MethodName: OnClickMenu
+        m_MethodName: OnClickBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

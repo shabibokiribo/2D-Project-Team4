@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,14 @@ public class Handler : MonoBehaviour {
     public AudioClip[] audios; // 0 rose, 1 take damage, 2 fall into pit
     AudioSource audioSource;
     private int lives;
-    
+
+    public int roses;
+    public int maxRoses;
+
+    private string scene;
+
+
+
 
     private void Start() {
         //lives = 3;
@@ -24,6 +32,8 @@ public class Handler : MonoBehaviour {
 
         lives = 3;
         audioSource = GetComponent<AudioSource>();
+
+        scene = SceneManager.GetActiveScene().name;
     }
     
     private void Update() {
@@ -54,8 +64,7 @@ public class Handler : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col) {
         switch(col.gameObject.tag) {
             case("Rose"):
-                //GainHealth(1);
-
+                roses += 1;
 
                 Destroy(col.gameObject);
                 audioSource.PlayOneShot(audios[0],1f);
@@ -107,6 +116,16 @@ public class Handler : MonoBehaviour {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
         }
+    }
+
+    void RosesText()
+    {
+        if (scene == "SampleScene")
+        {
+            maxRoses = 2;
+        }
+
+
     }
 
     void GainHealth (int hp) // decrease player's health by a number

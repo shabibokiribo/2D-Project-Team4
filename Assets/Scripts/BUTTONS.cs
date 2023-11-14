@@ -22,6 +22,11 @@ public class BUTTONS : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void OnClickBack()
+    {
+        SceneManager.LoadScene("MENU");
+    }
+
     public void OnClickHelp()
     {
         SceneManager.LoadScene("HELP");

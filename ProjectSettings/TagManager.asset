@@ -14,6 +14,8 @@ TagManager:
   - EnemyPlatform
   - DeathZone
   - Heart
+  - CloudTrig
+  - Fletcher
   layers:
   - Default
   - TransparentFX

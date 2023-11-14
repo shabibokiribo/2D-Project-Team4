@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Handler : MonoBehaviour {
     public Sprite[] sprites; // 0 idle, 1 run, 2 jump
@@ -17,10 +18,12 @@ public class Handler : MonoBehaviour {
     AudioSource audioSource;
     private int lives;
 
-    public int roses;
-    public int maxRoses;
+    public int roses; 
+    public int maxRoses; //maxRoses changes depending on level so it can be text in UI :/
 
-    private string scene;
+    private string scene; //current scene name variable
+
+    public TMP_Text roseUIText;
 
 
 
@@ -33,7 +36,7 @@ public class Handler : MonoBehaviour {
         lives = 3;
         audioSource = GetComponent<AudioSource>();
 
-        scene = SceneManager.GetActiveScene().name;
+        scene = SceneManager.GetActiveScene().name; //access current scene name
     }
     
     private void Update() {
@@ -43,6 +46,8 @@ public class Handler : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
         }
+
+        RosesText();
     }
     
     // Sprite updator
@@ -125,6 +130,7 @@ public class Handler : MonoBehaviour {
             maxRoses = 2;
         }
 
+        roseUIText.text = roses + "/" + maxRoses;
 
     }
 

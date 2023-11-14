@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Handler : MonoBehaviour {
     public Sprite[] sprites; // 0 idle, 1 run, 2 jump
@@ -14,13 +15,15 @@ public class Handler : MonoBehaviour {
     public HealthBar healthBar;
 
     public AudioClip[] audios; // 0 rose, 1 take damage, 2 fall into pit
-    AudioSource audioSource;
+    public AudioSource audioSource;
     private int lives;
 
-    public int roses;
-    public int maxRoses;
+    public int roses; 
+    public int maxRoses; //maxRoses changes depending on level so it can be text in UI :/
 
-    private string scene;
+    private string scene; //current scene name variable
+
+    public TMP_Text roseUIText;
 
 
 
@@ -31,9 +34,9 @@ public class Handler : MonoBehaviour {
         healthBar.SetMaxHealth(maxHealth);
 
         lives = 3;
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
 
-        scene = SceneManager.GetActiveScene().name;
+        scene = SceneManager.GetActiveScene().name; //access current scene name
     }
     
     private void Update() {
@@ -43,6 +46,8 @@ public class Handler : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
         }
+
+        RosesText();
     }
     
     // Sprite updator
@@ -70,34 +75,31 @@ public class Handler : MonoBehaviour {
                 audioSource.PlayOneShot(audios[0],1f);
                 break;
             case("Enemy"):
-                TakePlayerDamage(1); //decrease Healthbar by 1
-
-
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 audioSource.PlayOneShot(audios[1],1f);
+                TakePlayerDamage(1); //decrease Healthbar by 1
                 break;
             case("Arrow"):
-                TakePlayerDamage(1); //decrease Healthbar by 1
-
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 audioSource.PlayOneShot(audios[1],1f);
+                TakePlayerDamage(1); //decrease Healthbar by 1
                 break;
             case("Heart"):
-                TakePlayerDamage(1); //decrease Healthbar by 1
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
                 gameObject.GetComponent<X>().enabled = false;
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 audioSource.PlayOneShot(audios[1],1f);
+                TakePlayerDamage(1); //decrease Healthbar by 1
                 break;
             case("DeathZone"):
                 Debug.Log("YEOWCH!");
@@ -125,6 +127,7 @@ public class Handler : MonoBehaviour {
             maxRoses = 2;
         }
 
+        roseUIText.text = roses + "/" + maxRoses;
 
     }
 

@@ -5607,6 +5607,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3185679274977095355, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1687480942}
     - target: {fileID: 3938493610559376814, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.575278
@@ -5651,7 +5655,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8258681797126235804, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+    - {fileID: 4365670269199428434, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+    - {fileID: 6182595992291522351, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+    - {fileID: 4972904404872805116, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -24,6 +24,7 @@ public class Cloud : MonoBehaviour {
     private void FixedUpdate() {
         switch(intTilCloudDeath) {
             case(0):
+                GameObject.Find("CloudSpawned").GetComponent<MoveCloudPlatform>().enabled = true;
                 Destroy(gameObject);
                 break;
         }

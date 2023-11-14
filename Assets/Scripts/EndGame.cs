@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
-    public int roses;
+    
     AudioSource endSFXSource;
     public AudioClip winSFX;
     public AudioClip loseSFX;
     string endGame;
+
+    public Handler handler;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class EndGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Fletcher")
         {
-            if (roses == 2)
+            if (handler.roses == handler.maxRoses)
             {
                 endSFXSource.clip = winSFX;
                 endGame = "WIN";
@@ -32,9 +34,10 @@ public class EndGame : MonoBehaviour
                 endGame = "LOSE";
             }
             endSFXSource.Play();
-            Invoke("LoadEndGame",2.0f);
+            Invoke("LoadEndGame",1.0f);
         }
     }
+
 
     void LoadEndGame()
     {
@@ -42,8 +45,11 @@ public class EndGame : MonoBehaviour
     }
 
         // Update is called once per frame
-        void Update()
+    void Update()
     {
-        
+       if (handler.currentHealth == 0)
+       { 
+             SceneManager.LoadScene("LOSE");
+       }
     }
 }

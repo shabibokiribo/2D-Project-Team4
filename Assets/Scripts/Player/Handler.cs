@@ -16,7 +16,7 @@ public class Handler : MonoBehaviour {
 
     public AudioClip[] audios; // 0 rose, 1 take damage, 2 fall into pit
     public AudioSource audioSource;
-    private int lives;
+    public int lives;
 
     public int roses; 
     public int maxRoses; //maxRoses changes depending on level so it can be text in UI :/

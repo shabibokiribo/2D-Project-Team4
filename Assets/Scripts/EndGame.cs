@@ -47,7 +47,7 @@ public class EndGame : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
-       if (handler.currentHealth == 0)
+       if (handler.currentHealth <= 0)
        { 
              SceneManager.LoadScene("LOSE");
        }

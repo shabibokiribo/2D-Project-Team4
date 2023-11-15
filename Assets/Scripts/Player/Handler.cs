@@ -105,6 +105,7 @@ public class Handler : MonoBehaviour {
                 StartCoroutine(temporaryAnimation());
                 gameObject.transform.position = new Vector3(-6.5f,-3.2f,0f);
                 audioSource.PlayOneShot(audios[2],1f);
+                TakePlayerDamage(1);
                 break;
         }
     }

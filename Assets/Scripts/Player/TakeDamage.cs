@@ -17,26 +17,6 @@ public class TakeDamage : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.CompareTag("Heart"))
-            {
-                TakePlayerDamage(1);
-            }
-        }
-   
-        
-        /*
-        if(Input.GetKeyDown(KeyCode.Space)) // TESTING when spacebar is pressed take 1 damage
-        {
-            TakePlayerDamage(1);
-        }
-        */
-    }
-
     void TakePlayerDamage(int damage) // decrease player's health by a number
     {
         if (currentHealth <= 5 && currentHealth >= 0) //Player's health must be between 0 and 5 to take damage

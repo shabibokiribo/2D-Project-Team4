@@ -11,11 +11,13 @@ public class HammerDestroyer : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        float h = Input.GetAxis("Horizontal");
-        if(h>=0) {
-            gameObject.transform.position = new Vector2(player.transform.position.x + 1, player.transform.position.y);
-        } else {
-            gameObject.transform.position = new Vector2(player.transform.position.x - 1, player.transform.position.y);
+        switch(player.GetComponent<SpriteRenderer>().flipX) {
+            case(false):
+                gameObject.transform.position = new Vector2(player.transform.position.x + 1, player.transform.position.y);
+                break;
+            case(true):
+                gameObject.transform.position = new Vector2(player.transform.position.x - 1, player.transform.position.y);
+                break;
         }
        
     }

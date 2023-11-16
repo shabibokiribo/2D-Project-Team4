@@ -7,19 +7,19 @@ using UnityEngine;
 public class Hammer : MonoBehaviour {
     public GameObject hammerAsset;
     public GameObject spawnPointObj;
+    private float spawnShift = 0f;
     
     private void Update() {
         if(Input.GetKeyDown(KeyCode.E)) {
-            float h = Input.GetAxis("Horizontal");
-            float spawnShift = 0f;
-            switch(Mathf.Sign(h)) {
-                case(1):
+            switch(GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX) {
+                case(false):
                     spawnShift = 1f;
                     break;
-                case(-1):
+                case(true):
                     spawnShift = -1f;
                     break;
             }
+
             Vector2 _spawnPoint = new Vector2(spawnPointObj.transform.position.x + spawnShift, spawnPointObj.transform.position.y);
             GameObject hammer = Instantiate(hammerAsset,_spawnPoint,Quaternion.identity) as GameObject;
             hammer.GetComponent<SpriteRenderer>().sortingOrder = 1;

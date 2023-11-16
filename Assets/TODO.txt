@@ -1,0 +1,3 @@
+Add whatever you need to do here:
+1. Update the pause panel UI so it's not low quality. It is located in the SampleScene under the StdUI canvas.
+2. Design a second and third level.

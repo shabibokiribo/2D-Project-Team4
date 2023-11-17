@@ -13,8 +13,6 @@ public class MoveCloudPlatform : MonoBehaviour {
 
     private void Update() {
         speed = Mathf.Log(speed,10f) * 8f;
-        Debug.Log(speed);
-        Debug.Log(transform.position);
         transform.position = Vector2.MoveTowards(transform.position,target,speed * Time.deltaTime);
 
         Vector2 v2Pos = transform.position;

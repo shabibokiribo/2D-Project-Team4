@@ -9,8 +9,6 @@ public class Cloud : MonoBehaviour {
     private float _distance;
     public float speed;
     public int intTilCloudDeath;
-    private Color original = new Color(195f,179f,155f);
-    private Color dying = new Color(147f,52f,74f);
     public AudioClip drop;
     AudioSource audioSource;
 
@@ -28,7 +26,8 @@ public class Cloud : MonoBehaviour {
         switch(intTilCloudDeath) {
             case(0):
                 GameObject.Find("CloudSpawned").GetComponent<MoveCloudPlatform>().enabled = true;
-                Destroy(gameObject);
+                gameObject.GetComponent<Animator>().enabled = true;
+                Invoke("DestroyGameObject",1f);
                 break;
         }
     }
@@ -49,5 +48,9 @@ public class Cloud : MonoBehaviour {
         yield return new WaitForSeconds(time);
         speed = 1.5f;
         yield return null;
+    }
+    
+    private void DestroyGameObject() {
+        Destroy(gameObject);
     }
 }

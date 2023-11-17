@@ -5,9 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class LevelUI : MonoBehaviour {
     public GameObject[] pauseItems;
+    private bool isPaused;
 
     private void Awake() {
         Time.timeScale = 1;
+        isPaused = false;
+    }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            switch(isPaused) {
+                case(true):
+                    OnClickUnpause();
+                    isPaused = false;
+                    break;
+                case(false):
+                    OnClickPause();
+                    isPaused = true;
+                    break;
+            }
+        }
     }
 
     public void OnClickPause() {

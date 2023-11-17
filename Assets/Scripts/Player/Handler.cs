@@ -44,9 +44,7 @@ public class Handler : MonoBehaviour {
                 Debug.Log("YOU LOSE!!!!");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
-        }
-
-        RosesText();
+        } RosesText();
     }
     
     // Sprite updator

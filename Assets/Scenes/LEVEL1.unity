@@ -6789,6 +6789,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3185679274977095355, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
+      propertyPath: maxRoses
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185679274977095355, guid: 001e93404e13b744a91c3b1db0facd4e, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1327317923}

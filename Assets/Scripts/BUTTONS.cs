@@ -7,7 +7,7 @@ public class BUTTONS : MonoBehaviour
 {
     public void OnClickStart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("LEVEL1");
     }
 
     public void OnClickBack()

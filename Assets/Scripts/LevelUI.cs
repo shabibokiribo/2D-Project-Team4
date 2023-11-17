@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class LevelUI : MonoBehaviour {
     public GameObject[] pauseItems;
 
+    private void Awake() {
+        Time.timeScale = 1;
+    }
+
     public void OnClickPause() {
         Time.timeScale = 0;
         foreach(Transform child in gameObject.transform) {

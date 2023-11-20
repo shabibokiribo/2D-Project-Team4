@@ -28,7 +28,7 @@ public class EndGame : MonoBehaviour
                 Debug.Log("!!!!!");
                 endSFXSource.clip = winSFX;
                 endGame = "WIN";
-                lvlL.LoadLevTwo();
+                //lvlL.LoadLevTwo();
             }
             else
             {
@@ -36,7 +36,7 @@ public class EndGame : MonoBehaviour
                 endGame = "LOSE";
             }
             endSFXSource.Play();
-            Invoke("LoadEndGame",1.0f);
+            Invoke("LoadEndGame",0.8f);
         }
     }
 

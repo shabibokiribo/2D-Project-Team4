@@ -33,8 +33,9 @@ public class DialogueText : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(Dialogue("Avoid falling hearts and hit them with your shield to kill the cloud ", txtDialogueCloudTrig));
         }
-
     }
+
+
     public IEnumerator Dialogue(string text, TMP_Text message)
     {
         message.text = "";

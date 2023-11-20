@@ -9,7 +9,8 @@ public class EndGame : MonoBehaviour
     AudioSource endSFXSource;
     public AudioClip winSFX;
     public AudioClip loseSFX;
-    string endGame;
+    public string endGame;
+    public LevelLoaderScript lvlL;
 
     public Handler handler;
     // Start is called before the first frame update
@@ -24,9 +25,10 @@ public class EndGame : MonoBehaviour
         {
             if (handler.roses == handler.maxRoses)
             {
+                Debug.Log("!!!!!");
                 endSFXSource.clip = winSFX;
                 endGame = "WIN";
-
+                lvlL.LoadLevTwo();
             }
             else
             {

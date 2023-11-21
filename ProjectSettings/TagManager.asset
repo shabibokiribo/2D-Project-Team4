@@ -16,6 +16,7 @@ TagManager:
   - Heart
   - CloudTrig
   - Fletcher
+  - LevelJump
   layers:
   - Default
   - TransparentFX

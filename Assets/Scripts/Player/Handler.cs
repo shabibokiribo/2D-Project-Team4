@@ -120,9 +120,13 @@ public class Handler : MonoBehaviour {
 
     void RosesText()
     {
-        if (scene == "SampleScene")
+        if (scene == "LEVEL1")
         {
-            maxRoses = 2;
+            maxRoses = 3;
+        }
+        if (scene == "Level2")
+        {
+            maxRoses = 5;
         }
 
         roseUIText.text = roses + "/" + maxRoses;

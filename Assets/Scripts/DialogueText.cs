@@ -25,13 +25,13 @@ public class DialogueText : MonoBehaviour
         if (other.gameObject.tag == "CupidTrig")
         {
             StopAllCoroutines();
-            StartCoroutine(Dialogue("Avoid cupid arrows to stay faithful to your crush, Don't forget to use 'E' to kill enemies ", txtDialogueCupidTrig));
+            StartCoroutine(Dialogue("Use 'E' to kill enemies", txtDialogueCupidTrig));
         }
 
         if (other.gameObject.tag == "CloudTrig")
         {
             StopAllCoroutines();
-            StartCoroutine(Dialogue("Avoid falling hearts and hit them with your shield to kill the cloud ", txtDialogueCloudTrig));
+            StartCoroutine(Dialogue("Avoid falling hearts or hit them 3 times to kill the cloud", txtDialogueCloudTrig));
         }
     }
 

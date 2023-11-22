@@ -29,16 +29,18 @@ public class EndGame : MonoBehaviour
                 Debug.Log("!!!!!");
                 endSFXSource.clip = winSFX;
                 endGame = "WIN";
+                handler.invincible = true;
                 confession.gameObject.SetActive(true);
             }
             else
             {
                 endSFXSource.clip = loseSFX;
                 endGame = "LOSE";
+                handler.invincible = true;
                 confession.gameObject.SetActive(true);
             }
             endSFXSource.Play();
-            Invoke("LoadEndGame",0.8f);
+            Invoke("LoadEndGame",3.0f);
         }
 
         if (other.gameObject.tag == "LevelJump")

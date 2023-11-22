@@ -23,6 +23,7 @@ public class Handler : MonoBehaviour {
     private string scene; //current scene name variable
 
     public TMP_Text roseUIText;
+    public bool invincible = false;
 
 
 
@@ -78,7 +79,10 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 audioSource.PlayOneShot(audios[1],1f);
-                TakePlayerDamage(1); //decrease Healthbar by 1
+                if(invincible == false)
+                {
+                    TakePlayerDamage(1); //decrease Healthbar by 1
+                }
                 break;
             case("Arrow"):
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
@@ -87,7 +91,10 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 audioSource.PlayOneShot(audios[1],1f);
-                TakePlayerDamage(1); //decrease Healthbar by 1
+                if (invincible == false)
+                {
+                    TakePlayerDamage(1); //decrease Healthbar by 1
+                }
                 break;
             case("Heart"):
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
@@ -96,14 +103,20 @@ public class Handler : MonoBehaviour {
                 gameObject.GetComponent<Y>().enabled = false;
                 StartCoroutine(temporaryAnimation());
                 audioSource.PlayOneShot(audios[1],1f);
-                TakePlayerDamage(1); //decrease Healthbar by 1
+                if (invincible == false)
+                {
+                    TakePlayerDamage(1); //decrease Healthbar by 1
+                }
                 break;
             case("DeathZone"):
                 Debug.Log("YEOWCH!");
                 StartCoroutine(temporaryAnimation());
                 gameObject.transform.position = new Vector3(-6.5f,-3.2f,0f);
                 audioSource.PlayOneShot(audios[2],1f);
-                TakePlayerDamage(1);
+                if (invincible == false)
+                {
+                    TakePlayerDamage(1); //decrease Healthbar by 1
+                }
                 break;
         }
     }
